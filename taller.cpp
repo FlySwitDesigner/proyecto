@@ -120,7 +120,7 @@ int main() {
         switch (opcion) {
             case 1:
                 cout << "Nombre del atleta: ";
-                cin, atleta.nombre;
+                cin>>atleta.nombre;
 
                 cout << "Numero del atleta: ";
                 cin >> atleta.numero;
