@@ -10,8 +10,8 @@ struct Atleta {
     double promedio_tiempo;
 };
 
-class ArbolNodo {
-public:
+struct ArbolNodo {
+
     Atleta atleta;
     int altura;
     ArbolNodo* izquierda;
@@ -21,14 +21,14 @@ public:
 };
 
 int altura(ArbolNodo* nodo) {
-    if (nodo == nullptr) {
+    if (nodo == NULL) {
         return 0;
     }
     return nodo->altura;
 }
 
 int balance(ArbolNodo* nodo) {
-    if (nodo == nullptr) {
+    if (nodo == NULL) {
         return 0;
     }
     return altura(nodo->izquierda) - altura(nodo->derecha);
@@ -61,7 +61,7 @@ ArbolNodo* rotar_izquierda(ArbolNodo* x) {
 }
 
 ArbolNodo* insertar(ArbolNodo* nodo, const Atleta& atleta) {
-    if (nodo == nullptr) {
+    if (nodo == NULL) {
         return new ArbolNodo(atleta);
     }
 
@@ -97,7 +97,7 @@ ArbolNodo* insertar(ArbolNodo* nodo, const Atleta& atleta) {
 }
 
 void recorrer_enorden(ArbolNodo* nodo) {
-    if (nodo == nullptr) {
+    if (nodo == NULL) {
         return;
     }
     recorrer_enorden(nodo->izquierda);
@@ -107,7 +107,7 @@ void recorrer_enorden(ArbolNodo* nodo) {
 }
 
 int main() {
-    ArbolNodo* raiz = nullptr;
+    ArbolNodo* raiz = NULL;
     int opcion, numero_vueltas;
     double tiempo, promedio_tiempo;
     Atleta atleta;
@@ -120,8 +120,7 @@ int main() {
         switch (opcion) {
             case 1:
                 cout << "Nombre del atleta: ";
-                cin.ignore();
-                getline(cin, atleta.nombre);
+                cin, atleta.nombre;
 
                 cout << "Numero del atleta: ";
                 cin >> atleta.numero;
